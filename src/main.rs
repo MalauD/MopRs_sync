@@ -132,14 +132,14 @@ async fn main() {
     let db = client_db.database("MopRs");
 
     println!("Starting music sync");
-    sync_music(db, client_search).await;
+    sync_music(db.clone(), client_search.clone()).await;
     println!("Music sync finished");
 
     println!("Starting album sync");
-    sync_album(db, client_search).await;
+    sync_album(db.clone(), client_search.clone()).await;
     println!("Album sync finished");
 
     println!("Starting artist sync");
-    sync_artist(db, client_search).await;
+    sync_artist(db.clone(), client_search.clone()).await;
     println!("Artist sync finished");
 }

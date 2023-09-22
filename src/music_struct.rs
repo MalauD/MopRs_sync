@@ -86,8 +86,6 @@ pub struct Artist {
     pub top_tracks: Option<Vec<DeezerId>>,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub related_artists: Option<Vec<DeezerId>>,
-    #[serde(with = "bson::serde_helpers::chrono_datetime_as_bson_datetime")]
-    pub last_update: chrono::DateTime<Utc>,
 }
 
 #[derive(Serialize, Deserialize)]
